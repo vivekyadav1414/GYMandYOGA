@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MPROGYMANDYOGAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBL_Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="mob" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="200" />
+          <Property Name="msg" Type="varchar" MaxLength="500" />
+          <Property Name="contactdate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBL_Login">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBL_Members">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="mob" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="500" />
+          <Property Name="city" Type="varchar" MaxLength="200" />
+          <Property Name="pplan" Type="varchar" MaxLength="100" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="Regdate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="MPROGYMANDYOGAModelStoreContainer">
+          <EntitySet Name="TBL_Contact" EntityType="Self.TBL_Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Login" EntityType="Self.TBL_Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Members" EntityType="Self.TBL_Members" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MPROGYMANDYOGAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBL_Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mob" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="msg" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="contactdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_Login">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_Members">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mob" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="pplan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Regdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="MPROGYMANDYOGAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBL_Contact" EntityType="Self.TBL_Contact" />
+          <EntitySet Name="TBL_Login" EntityType="Self.TBL_Login" />
+          <EntitySet Name="TBL_Members" EntityType="Self.TBL_Members" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MPROGYMANDYOGAModelStoreContainer" CdmEntityContainer="MPROGYMANDYOGAEntities">
+          <EntitySetMapping Name="TBL_Contact">
+            <EntityTypeMapping TypeName="MPROGYMANDYOGAModel.TBL_Contact">
+              <MappingFragment StoreEntitySet="TBL_Contact">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="mob" ColumnName="mob" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="msg" ColumnName="msg" />
+                <ScalarProperty Name="contactdate" ColumnName="contactdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Login">
+            <EntityTypeMapping TypeName="MPROGYMANDYOGAModel.TBL_Login">
+              <MappingFragment StoreEntitySet="TBL_Login">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Members">
+            <EntityTypeMapping TypeName="MPROGYMANDYOGAModel.TBL_Members">
+              <MappingFragment StoreEntitySet="TBL_Members">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="mob" ColumnName="mob" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="pplan" ColumnName="pplan" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="Regdate" ColumnName="Regdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

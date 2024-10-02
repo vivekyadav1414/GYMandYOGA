@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "UpdateRecord";
+    Layout = "~/Views/Shared/AdminMaster.cshtml";
+}
+@model GYMandYOGA.Models.TBL_Members
+<div class="row" style="min-height:550px;">
+     <div class="col-sm-3"></div>
+           <div class="col-sm-6" style="height:600px;background:rgba(1.5,0.5,0.5,0.5); border-radius:15px
+                ;margin-top: 1px;  font-family: algerian">
+                <div class="col-sm-12" style="height:40px;width: 100%;color: white;text-align: center;font-size:
+                    30px;font-weight: bold;font-family:ROG FONTS;">BECOME MEMBER</div>
+               <form action="/AdminZone/UpdateRecord" enctype="multipart/form-data" method="post"  style="color:white;font-size:18px;font-weight: bold;font-family:Neuton-Regular;">
+                   Name:
+               <input  name="Name" value="@Model.Name" type="text"  placeholder="Enter Your Name...." class="form-control"/><br />
+           Mobile No:
+               <input name="mob" value="@Model.mob" type="number"  placeholder="Enter Your Mobile No...." class="form-control"/><br />
+                 
+                      Address:
+               <input  name="address" value="@Model.address" type="text"  placeholder="Enter Your Address...." class="form-control"/><br />
+                     Select City:
+               <select name="city" value="@Model.city" class="form-control"  style="color:#072E33;">
+                  <option>Select Option</option>
+                  <option>Mahmudabad</option>
+                   <option>Sitapur</option>
+                    <option>Lucknow</option>
+                     <option>Other</option>
+              </select><br>
+
+              
+                     Price/Plan:
+             <select name="pplan" value="@Model.pplan" class="form-control"  style="color:#072E33;">
+                  <option>Select Price/Plan</option>
+                  <option>1 MONTH/2,000Rs</option>
+                   <option>3 MONTH/5,000Rs</option>
+                    <option>6 MONTH/8,000Rs</option>
+                     <option>1 YEAR/15,000Rs</option>
+              </select><br>
+                 
+                      Gender@{
+                          string gender = Model.gender.ToString();
+                          if(gender=="Male")
+                          {
+                          <input type="radio" name="gender" value="Male" checked="checked" />
+                          <span>Male</span>
+                           <input type="radio" name="gender" value="Female" checked="checked" />
+                          <span>Female</span>
+                          }
+                          
+                          }
+
+             <br />
+
+              
+ <input type="submit" value="SUBMIT" class="btn btn-success" style="margin-left:40%;background:transparent; "/>
+               
+               
+               </form>
+               </div>
+</div>

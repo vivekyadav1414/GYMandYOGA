@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+<div class="row" style="min-height:600px;">
+     <div class="col-sm-3"></div>
+           <div class="col-sm-6" style="height:400px;;background:rgba(1.5,0.5,0.5,0.5); border-radius:15px
+                ;margin-top: 100px;  font-family: algerian">
+                <div class="col-sm-12" style="height:50px;width: 100%;color: white;text-align: center;font-size:
+                    30px;font-weight: bold;font-family:ROG FONTS;">LOG IN</div>
+               <form action="/Home/login" method="post"  style="color:white;font-size:18px;font-weight: bold;font-family:ROG FONTS;">
+                USER ID:
+               <input name="UserId" type="text"  placeholder="Enter Your Name...." class="form-control"/><br>
+        Password:
+               <input name="Password" type="password"  placeholder="Enter YOUR  MOBILE NO...." class="form-control"/><br>
+             
+               
+ <input type="submit" value="Login" class="btn btn-success" style="margin-left:40%;background:transparent; "/>
+               
+               
+               </form>
+               </div>
+</div>

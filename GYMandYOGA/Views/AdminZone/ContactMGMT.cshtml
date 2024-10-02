@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "ContactMGMT";
+    Layout = "~/Views/Shared/AdminMaster.cshtml";
+}
+
+@model List<GYMandYOGA.Models.TBL_Contact>
+<div class="row">
+    <table class="table table-borderd" style="background:#11505e;">
+        <tr>
+         
+              <th>Id</th>
+              <th>Name</th>
+              <th>Mob No</th>
+            <th>Email</th>
+              <th>Msg</th>
+              <th>ContactDate</th>
+        </tr>
+        @foreach (var x in Model)
+        { 
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Name</td>
+            <td>@x.mob</td>
+            <td>@x.email</td>
+            <td>@x.msg</td>
+            <td>@x.contactdate</td>
+        </tr>
+        }
+
+    </table>
+</div>

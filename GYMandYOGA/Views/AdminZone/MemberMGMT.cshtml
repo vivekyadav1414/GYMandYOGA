@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "MemberMGMT";
+    Layout = "~/Views/Shared/AdminMaster.cshtml";
+}
+@model List<GYMandYOGA.Models.TBL_Members>
+<div class="row">
+     <table class="table table-borderd" style="background:#11505e;">
+         <tr>
+             <th>Id</th>
+             <th>Name</th>
+             <th>Mob No</th>
+             <th>Address</th>
+             <th>City</th>
+             <th>Price&Plan</th>
+             <th>Gender</th>
+             <th>RegDate</th>
+             <th>Add</th>
+             <th>Delete</th>
+             <th>Update</th>
+         </tr>
+         @foreach (var x in Model)
+         { 
+         <tr>
+             <td>@x.Id</td>
+             <td>@x.Name</td>
+             <td>@x.mob</td>
+             <td>@x.address</td>
+             <td>@x.city</td>
+             <td>@x.pplan</td>
+             <td>@x.gender</td>
+             <td>@x.Regdate</td>
+             <td>Insert</td>
+             <td><a href="/AdminZone/Delete?m=@x.mob">Delete</a></td>
+             <td><a href="/AdminZone/UpdateRecord?U=@x.Name">Update</a></td>
+         </tr>
+         }
+
+         </table>
+</div>
